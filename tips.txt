@@ -1,0 +1,27 @@
+查看状态（哪个文件有过更改）： git status
+查看更改（具体更改什么地方）： git diff
+提交文件（可提交多个文件，在一起commit）：git add filename
+日志标注：git commit -m"标注"
+查看历史记录：git log 最近到最远
+#如果太乱，可以：git log --pretty=oneline
+版本回退：git reset --hard HEAD^
+#上一个版本是HEAD^,上上个是HEAD^,上一百个写成HEAD~100
+#如果通过git log查看到commit后的十六进制码，可以回退到对应版本
+#git reset --hard 1094a 不需要打全
+查看工作区和最新版本区别：git diff HEAD -- filename
+#如果写错了东西还没有add到暂存区
+丢弃工作区修改：git checkout -- filename
+#如果add到了暂存区，使用git reset HEAD filename 把暂存区修改撤销掉（unstage），从新放回到工作区
+删除文件 本地删除时，git status后git会告诉删掉
+此时两个选择，一是确实要删除文件，使用：git rm filename删掉，并git commit
+另一种情况是删错了，恢复：git checkout -- filename
+#git checkout其实是使用版本库中的版本代替工作区的版本
+
+#远程仓库：
+lixu23187@163.com
+meiyoupassword
+在github上新建仓库，在本地工作区下运行命令
+git remote add orrgin git@github.com:dengshenglee:dengshenglee/learngit.git
+推送到远程库
+git push -u origin master
+
